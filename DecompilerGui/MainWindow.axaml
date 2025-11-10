@@ -14,15 +14,15 @@
 
     <Grid ColumnDefinitions="300, *">
       <!-- left: namespace/type tree -->
-      <TreeView Grid.Column="0"
-                Items="{Binding Types}"
-                SelectedItem="{Binding SelectedType, Mode=TwoWay}">
-        <TreeView.ItemTemplate>
-          <TreeDataTemplate ItemsSource="{Binding Children}">
-            <TextBlock Text="{Binding DisplayName}"/>
-          </TreeDataTemplate>
-        </TreeView.ItemTemplate>
-      </TreeView>
+<TreeView Grid.Column="0"
+          ItemsSource="{Binding Types}"
+          SelectedItem="{Binding SelectedType, Mode=TwoWay}">
+  <TreeView.ItemTemplate>
+    <TreeDataTemplate ItemsSource="{Binding Children}">
+      <TextBlock Text="{Binding DisplayName}" />
+    </TreeDataTemplate>
+  </TreeView.ItemTemplate>
+</TreeView>
 
       <!-- right: code view -->
       <Grid Grid.Column="1" RowDefinitions="Auto, *">
@@ -30,14 +30,14 @@
                    Text="{Binding HeaderText}"
                    FontSize="16" FontWeight="Bold"/>
         <TextBox Grid.Row="1"
-                 Margin="8"
-                 IsReadOnly="True"
-                 AcceptsReturn="True"
-                 TextWrapping="NoWrap"
-                 HorizontalScrollBarVisibility="Auto"
-                 VerticalScrollBarVisibility="Auto"
-                 FontFamily="Consolas, Fira Code, Monospace"
-                 Text="{Binding DecompiledCode}"/>
+         Margin="8"
+         IsReadOnly="True"
+         AcceptsReturn="True"
+         TextWrapping="NoWrap"
+         ScrollViewer.HorizontalScrollBarVisibility="Auto"
+         ScrollViewer.VerticalScrollBarVisibility="Auto"
+         FontFamily="Consolas, Fira Code, Monospace"
+         Text="{Binding DecompiledCode}"/>
       </Grid>
     </Grid>
   </DockPanel>
