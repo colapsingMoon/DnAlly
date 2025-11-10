@@ -107,23 +107,6 @@
           "buildTransitive/Avalonia.BuildServices.targets": {}
         }
       },
-      "Avalonia.Controls.ColorPicker/11.3.8": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.3.8",
-          "Avalonia.Remote.Protocol": "11.3.8"
-        },
-        "compile": {
-          "lib/net8.0/Avalonia.Controls.ColorPicker.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Avalonia.Controls.ColorPicker.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Avalonia.Desktop/11.3.8": {
         "type": "package",
         "dependencies": {
@@ -140,24 +123,6 @@
         },
         "runtime": {
           "lib/net8.0/Avalonia.Desktop.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Avalonia.Diagnostics/11.3.8": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.3.8",
-          "Avalonia.Controls.ColorPicker": "11.3.8",
-          "Avalonia.Themes.Simple": "11.3.8"
-        },
-        "compile": {
-          "lib/net8.0/Avalonia.Diagnostics.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Avalonia.Diagnostics.dll": {
             "related": ".xml"
           }
         }
@@ -264,22 +229,6 @@
         },
         "runtime": {
           "lib/net8.0/Avalonia.Themes.Fluent.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Avalonia.Themes.Simple/11.3.8": {
-        "type": "package",
-        "dependencies": {
-          "Avalonia": "11.3.8"
-        },
-        "compile": {
-          "lib/net8.0/Avalonia.Themes.Simple.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Avalonia.Themes.Simple.dll": {
             "related": ".xml"
           }
         }
@@ -861,24 +810,6 @@
         "tools/netstandard2.0/runtimeconfig.json"
       ]
     },
-    "Avalonia.Controls.ColorPicker/11.3.8": {
-      "sha512": "4dcW1kqjsRgljFTRsj5zOa2YE9gRZTx00fCkG+dIPuommxR/PtB106z7Yivlry9xh32Q9ZaF/2h9F3omjTFGSQ==",
-      "type": "package",
-      "path": "avalonia.controls.colorpicker/11.3.8",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "avalonia.controls.colorpicker.11.3.8.nupkg.sha512",
-        "avalonia.controls.colorpicker.nuspec",
-        "lib/net6.0/Avalonia.Controls.ColorPicker.dll",
-        "lib/net6.0/Avalonia.Controls.ColorPicker.xml",
-        "lib/net8.0/Avalonia.Controls.ColorPicker.dll",
-        "lib/net8.0/Avalonia.Controls.ColorPicker.xml",
-        "lib/netstandard2.0/Avalonia.Controls.ColorPicker.dll",
-        "lib/netstandard2.0/Avalonia.Controls.ColorPicker.xml"
-      ]
-    },
     "Avalonia.Desktop/11.3.8": {
       "sha512": "lod+Y6j/adzeANDCzhgJHPHPzsxXI3+i307MBctGoiQW0Ny6uGW7J+RIlQlNMawgsAbnCaa5ygEadTbGudXZWg==",
       "type": "package",
@@ -895,24 +826,6 @@
         "lib/net8.0/Avalonia.Desktop.xml",
         "lib/netstandard2.0/Avalonia.Desktop.dll",
         "lib/netstandard2.0/Avalonia.Desktop.xml"
-      ]
-    },
-    "Avalonia.Diagnostics/11.3.8": {
-      "sha512": "zm9H+zerEVmxIbtnBngpYKVoi2Z0ceKwgnb/8R14Rld12StFrRTXlwHhK5Aue+gyns+a/r4479SsOcvOww66KQ==",
-      "type": "package",
-      "path": "avalonia.diagnostics/11.3.8",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "avalonia.diagnostics.11.3.8.nupkg.sha512",
-        "avalonia.diagnostics.nuspec",
-        "lib/net6.0/Avalonia.Diagnostics.dll",
-        "lib/net6.0/Avalonia.Diagnostics.xml",
-        "lib/net8.0/Avalonia.Diagnostics.dll",
-        "lib/net8.0/Avalonia.Diagnostics.xml",
-        "lib/netstandard2.0/Avalonia.Diagnostics.dll",
-        "lib/netstandard2.0/Avalonia.Diagnostics.xml"
       ]
     },
     "Avalonia.Fonts.Inter/11.3.8": {
@@ -1022,24 +935,6 @@
         "lib/net8.0/Avalonia.Themes.Fluent.xml",
         "lib/netstandard2.0/Avalonia.Themes.Fluent.dll",
         "lib/netstandard2.0/Avalonia.Themes.Fluent.xml"
-      ]
-    },
-    "Avalonia.Themes.Simple/11.3.8": {
-      "sha512": "KV6F5fLqhPz9RQLjWubLrgE9b3qEjvb5tW37nONS7zifXI01alXrAf/l2vnv0Xgeo+ZUsBD5ENK/sofqeeNpsw==",
-      "type": "package",
-      "path": "avalonia.themes.simple/11.3.8",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "avalonia.themes.simple.11.3.8.nupkg.sha512",
-        "avalonia.themes.simple.nuspec",
-        "lib/net6.0/Avalonia.Themes.Simple.dll",
-        "lib/net6.0/Avalonia.Themes.Simple.xml",
-        "lib/net8.0/Avalonia.Themes.Simple.dll",
-        "lib/net8.0/Avalonia.Themes.Simple.xml",
-        "lib/netstandard2.0/Avalonia.Themes.Simple.dll",
-        "lib/netstandard2.0/Avalonia.Themes.Simple.xml"
       ]
     },
     "Avalonia.Win32/11.3.8": {
@@ -1568,12 +1463,11 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Avalonia >= 11.3.8",
-      "Avalonia.Desktop >= 11.3.8",
-      "Avalonia.Diagnostics >= 11.3.8",
-      "Avalonia.Fonts.Inter >= 11.3.8",
-      "Avalonia.Themes.Fluent >= 11.3.8",
-      "ICSharpCOde.Decompiler >= 9.1.0.7988"
+      "Avalonia >= 11.*",
+      "Avalonia.Desktop >= 11.*",
+      "Avalonia.Fonts.Inter >= 11.*",
+      "Avalonia.Themes.Fluent >= 11.*",
+      "ICSharpCode.Decompiler >= 9.*"
     ]
   },
   "packageFolders": {
@@ -1627,27 +1521,23 @@
         "dependencies": {
           "Avalonia": {
             "target": "Package",
-            "version": "[11.3.8, )"
+            "version": "[11.*, )"
           },
           "Avalonia.Desktop": {
             "target": "Package",
-            "version": "[11.3.8, )"
-          },
-          "Avalonia.Diagnostics": {
-            "target": "Package",
-            "version": "[11.3.8, )"
+            "version": "[11.*, )"
           },
           "Avalonia.Fonts.Inter": {
             "target": "Package",
-            "version": "[11.3.8, )"
+            "version": "[11.*, )"
           },
           "Avalonia.Themes.Fluent": {
             "target": "Package",
-            "version": "[11.3.8, )"
+            "version": "[11.*, )"
           },
-          "ICSharpCOde.Decompiler": {
+          "ICSharpCode.Decompiler": {
             "target": "Package",
-            "version": "[9.1.0.7988, )"
+            "version": "[9.*, )"
           }
         },
         "imports": [

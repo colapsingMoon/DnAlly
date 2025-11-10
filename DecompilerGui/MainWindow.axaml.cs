@@ -1,7 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Platform.Storage;
 using System.Threading.Tasks;
-using DecompilerGui;  // already same namespace, but makes it explicit
 
 namespace DecompilerGui;
 
@@ -13,28 +13,25 @@ public partial class MainWindow : Window
         DataContext = new MainViewModel();
     }
 
-    private async void OpenAssembly_Click(object? sender, RoutedEventArgs e)
+    private async void OpenAssembly_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+{
+    var files = await this.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
     {
-        var ofd = new OpenFileDialog
+        Title = "Open .NET assembly",
+        AllowMultiple = false,
+        FileTypeFilter = new[]
         {
-            Title = "Open .NET assembly",
-            AllowMultiple = false,
-            Filters =
-            {
-                new FileDialogFilter(){ Name = "Assemblies", Extensions = { "dll", "exe" } },
-                new FileDialogFilter(){ Name = "All files", Extensions = { "*" } }
-            }
-        };
-
-        var paths = await ofd.ShowAsync(this);
-        if (paths is { Length: > 0 })
-        {
-            if (DataContext is MainViewModel vm)
-            {
-                await Task.Run(() => vm.LoadAssembly(paths[0]));
-            }
+            new FilePickerFileType("Assemblies"){ Patterns = new[] { "*.dll", "*.exe" } },
+            FilePickerFileTypes.All
         }
+    });
+
+    if (files is { Count: > 0 } && DataContext is MainViewModel vm)
+    {
+        var path = files[0].Path.LocalPath;
+        await Task.Run(() => vm.LoadAssembly(path));
     }
+}
 
     private void Exit_Click(object? sender, RoutedEventArgs e) => Close();
 }

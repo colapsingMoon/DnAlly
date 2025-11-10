@@ -1,10 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="DecompilerGui.App"
-             RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
-
-    <Application.Styles>
-        <FluentTheme />
-    </Application.Styles>
+             x:Class="DecompilerGui.App">
+  <Application.Styles>
+    <FluentTheme Mode="Dark"/>
+  </Application.Styles>
 </Application>

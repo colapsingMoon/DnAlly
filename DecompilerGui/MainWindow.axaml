@@ -1,11 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:ae="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
         x:Class="DecompilerGui.MainWindow"
         Width="1100" Height="700"
         Title="Linux Decompiler (Avalonia + ILSpy engine)">
-
-
   <DockPanel>
     <Menu DockPanel.Dock="Top">
       <MenuItem Header="_File">
@@ -16,6 +13,7 @@
     </Menu>
 
     <Grid ColumnDefinitions="300, *">
+      <!-- left: namespace/type tree -->
       <TreeView Grid.Column="0"
                 Items="{Binding Types}"
                 SelectedItem="{Binding SelectedType, Mode=TwoWay}">
@@ -26,16 +24,20 @@
         </TreeView.ItemTemplate>
       </TreeView>
 
+      <!-- right: code view -->
       <Grid Grid.Column="1" RowDefinitions="Auto, *">
         <TextBlock Margin="8"
                    Text="{Binding HeaderText}"
                    FontSize="16" FontWeight="Bold"/>
-        <ae:TextEditor Grid.Row="1"
-                       Margin="8"
-                       IsReadOnly="True"
-                       ShowLineNumbers="True"
-                       FontFamily="Consolas, Fira Code, Monospace"
-                       Text="{Binding DecompiledCode}"/>
+        <TextBox Grid.Row="1"
+                 Margin="8"
+                 IsReadOnly="True"
+                 AcceptsReturn="True"
+                 TextWrapping="NoWrap"
+                 HorizontalScrollBarVisibility="Auto"
+                 VerticalScrollBarVisibility="Auto"
+                 FontFamily="Consolas, Fira Code, Monospace"
+                 Text="{Binding DecompiledCode}"/>
       </Grid>
     </Grid>
   </DockPanel>
