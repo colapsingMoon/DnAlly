@@ -1,9 +1,42 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:ae="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
         x:Class="DecompilerGui.MainWindow"
-        Title="DecompilerGui">
-    Welcome to Avalonia!
+        Width="1100" Height="700"
+        Title="Linux Decompiler (Avalonia + ILSpy engine)">
+
+
+  <DockPanel>
+    <Menu DockPanel.Dock="Top">
+      <MenuItem Header="_File">
+        <MenuItem Header="_Open Assembly..." Click="OpenAssembly_Click"/>
+        <Separator/>
+        <MenuItem Header="E_xit" Click="Exit_Click"/>
+      </MenuItem>
+    </Menu>
+
+    <Grid ColumnDefinitions="300, *">
+      <TreeView Grid.Column="0"
+                Items="{Binding Types}"
+                SelectedItem="{Binding SelectedType, Mode=TwoWay}">
+        <TreeView.ItemTemplate>
+          <TreeDataTemplate ItemsSource="{Binding Children}">
+            <TextBlock Text="{Binding DisplayName}"/>
+          </TreeDataTemplate>
+        </TreeView.ItemTemplate>
+      </TreeView>
+
+      <Grid Grid.Column="1" RowDefinitions="Auto, *">
+        <TextBlock Margin="8"
+                   Text="{Binding HeaderText}"
+                   FontSize="16" FontWeight="Bold"/>
+        <ae:TextEditor Grid.Row="1"
+                       Margin="8"
+                       IsReadOnly="True"
+                       ShowLineNumbers="True"
+                       FontFamily="Consolas, Fira Code, Monospace"
+                       Text="{Binding DecompiledCode}"/>
+      </Grid>
+    </Grid>
+  </DockPanel>
 </Window>
